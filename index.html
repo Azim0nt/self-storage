@@ -21,7 +21,7 @@
                 просторное пространство и гибкую аренду. <br />
               </p>
               <div class="buttons">
-                <button id="consultation">
+                <button id="consultation" onclick="openModalWindow()">
                   <p>Консультация</p>
                   <svg
                     width="62"
@@ -300,7 +300,13 @@
           <p id="title">Наши решения</p>
           <div class="body">
             <div class="card">
-              <div class="top"><div class="dots"><p id="active">1</p><p>2</p><p>3</p></div></div>
+              <div class="top">
+                <div class="dots">
+                  <p id="active">1</p>
+                  <p>2</p>
+                  <p>3</p>
+                </div>
+              </div>
               <div class="bottom">
                 <p>
                   Клиент <b>бронирует</b><br />
@@ -309,25 +315,37 @@
               </div>
             </div>
             <div class="card">
-              <div class="top"><div class="dots"><p>1</p><p id="active">2</p><p>3</p></div></div>
+              <div class="top">
+                <div class="dots">
+                  <p>1</p>
+                  <p id="active">2</p>
+                  <p>3</p>
+                </div>
+              </div>
               <div class="bottom">
                 <p>
-                    Сразу производит <br>
-                    <b>оплату</b>
+                  Сразу производит <br />
+                  <b>оплату</b>
                 </p>
               </div>
             </div>
             <div class="card">
-                <div class="top">
-                    <p>
-                        Электронные замки позволяют клиенту  <br>
-                        открывать ячейку 24/7 напрямую при  <br>
-                        помощи телефона, для пользователей, плохо <br>
-                         владеющих телефоном предусмотрена <br>
-                          кодовая PRDIF панель
-                    </p>
+              <div class="top">
+                <p>
+                  Электронные замки позволяют клиенту <br />
+                  открывать ячейку 24/7 напрямую при <br />
+                  помощи телефона, для пользователей, плохо <br />
+                  владеющих телефоном предусмотрена <br />
+                  кодовая PRDIF панель
+                </p>
+              </div>
+              <div class="bottom">
+                <div class="dots">
+                  <p>1</p>
+                  <p>2</p>
+                  <p id="active">3</p>
                 </div>
-                <div class="bottom"><div class="dots"><p>1</p><p>2</p><p id="active">3</p></div></div>
+              </div>
             </div>
           </div>
         </div>
@@ -338,10 +356,14 @@
             <img src="images/icons/logo.svg" alt="" />
           </div>
           <div class="middle">
-            <a href="#about-us">О нас</a>
-            <a href="#solutions">Наши решения</a>
-            <a href="#poducts">Продукты</a>
-            <a href="#how-to-working">Как это работает</a>
+            <a onclick="goToPath('.about-us')" id="about-us" href="#about-us"
+              >О нас</a
+            >
+            <a onclick="goToPath('.solution')" id="solution" href="#solutions"
+              >Наши решения</a
+            >
+            <a id="" href="#poducts">Продукты</a>
+            <a id="" href="#how-to-working">Как это работает</a>
           </div>
           <div class="right">
             <svg
@@ -365,6 +387,29 @@
           alt=""
         /> -->
       </header>
-    </main>
+      <div class="bag-modal-window">
+        <div class="modal-window">
+          <div class="cancel"><button onclick="exitModalWindow()"><img src="images/cancel.png" alt="" /></button></div>
+          <div class="form">
+             <div class="left">
+            <img src="images/undraw_active_support_re_b7sj 1.png" alt="" />
+          </div>
+          <div class="right">
+            <p id="title">Получить консультацию</p>
+            <input id="inputName" type="text" placeholder="Ваше имя" />
+            <input id="inputNumber" type="text" placeholder="Ваш телефон" />
+            <p id="info">
+              Нажимая “Отправить” вы подтверждаете свое согласие на  <br>
+              обработку и хранение ваших персональных данных в <br>
+              соответствии с <span>политикой обработки персональных данных.  </span>
+            </p>
+            <button id="send-form-modal-window">Отправить запрос</button>
+          </div>
+          </div>
+         
+        </div>
+      </div>
+    </main>underline;
+    <script src="main.js"></script>
   </body>
 </html>

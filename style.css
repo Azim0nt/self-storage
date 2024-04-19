@@ -34,6 +34,8 @@
 button,
 a {
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 body main .main-section .home .home-body .left .buttons #consultation {
@@ -55,6 +57,9 @@ body main .main-section .home .home-body .left .buttons #demo-version {
   outline: none;
 }
 
+body {
+  position: relative;
+}
 body main {
   position: relative;
 }
@@ -280,6 +285,7 @@ body main .main-section .solution #title {
   font-family: "Circe Bold", sans-serif;
   font-size: 60px;
   color: #214080;
+  margin-bottom: 50px;
 }
 body main .main-section .solution .body {
   display: grid;
@@ -330,4 +336,82 @@ body main .main-section .solution .body .card:nth-child(3) {
   width: 599px;
   justify-content: space-between;
   align-items: end;
+}
+body main .bag-modal-window {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #214080;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+body main .bag-modal-window .cancel button {
+  cursor: pointer;
+  background-color: transparent;
+}
+body main .bag-modal-window .modal-window {
+  width: 960px;
+  height: 580px;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: #F1F7FF;
+}
+body main .bag-modal-window .modal-window .form {
+  display: flex;
+}
+body main .bag-modal-window .modal-window .form .left {
+  padding: 20px;
+}
+body main .bag-modal-window .modal-window .form .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+body main .bag-modal-window .modal-window .form .right #title {
+  font-family: "Circe Bold", sans-serif;
+  font-size: 40px;
+  color: #214080;
+}
+body main .bag-modal-window .modal-window .form .right input {
+  margin: 15px 0;
+  width: 350px;
+  height: 75px;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 15px 0 15px 15px;
+  box-shadow: 0px 8px 0px 0px #2954b1;
+}
+body main .bag-modal-window .modal-window .form .right input::-moz-placeholder {
+  font-family: "Circe", sans-serif;
+  font-size: 25px;
+  color: #dadada;
+}
+body main .bag-modal-window .modal-window .form .right input::placeholder {
+  font-family: "Circe", sans-serif;
+  font-size: 25px;
+  color: #dadada;
+}
+body main .bag-modal-window .modal-window .form .right #info {
+  text-align: right;
+  font-family: "Circe", sans-serif;
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: rgba(41, 84, 177, 0.4352941176);
+}
+body main .bag-modal-window .modal-window .form .right #info span {
+  color: rgba(41, 84, 177, 0.4352941176);
+  text-decoration: underline;
+}
+body main .bag-modal-window .modal-window .form .right #send-form-modal-window {
+  padding: 20px 40px;
+  background-color: #2954b1;
+  border-radius: 15px;
+  color: #fff;
+  font-family: "Circe Bold", sans-serif;
+  font-size: 25px;
 }/*# sourceMappingURL=style.css.map */
