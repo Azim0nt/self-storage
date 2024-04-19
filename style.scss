@@ -1,12 +1,28 @@
 $blue-dark: #214080;
 $blue-main: #2954b1;
 @font-face {
-  font-family: "Circe";
-  src: url(fonts/Circe/CRC25.otf) format("opentype"),
-       url(fonts/Circe/CRC26.otf) format("opentype"),
-       url(fonts/Circe/CRC27.otf) format("opentype");
+  font-family: "Circe Extra Light";
+  src: url(fonts/Circe/CRC25.otf) format("opentype");
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circe Light";
+  src: url(fonts/Circe/CRC35.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circe";
+  src: url(fonts/Circe/CRC55.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circe Bold";
+  src: url(fonts/Circe/CRC65.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 * {
   padding: 0;
@@ -16,7 +32,10 @@ $blue-main: #2954b1;
   font-family: "Circe", sans-serif;
   color: #fff;
 }
-
+button,
+a {
+  cursor: pointer;
+}
 %white-button {
   border-radius: 15px;
   padding: 10px 30px;
@@ -39,6 +58,7 @@ body {
     header {
       width: 100%;
       height: 70px;
+      background-color: $blue-main;
       div {
         width: 70%;
         margin: 0 auto;
@@ -54,14 +74,17 @@ body {
       .middle {
         a {
           text-decoration: none;
+          font-size: 16px;
           color: #fff;
-          font-weight: 400;
+          font-family: "Circe Extra Light", sans-serif;
           padding: 10px;
         }
       }
       .right {
         display: flex;
+        justify-content: center;
         gap: 5px;
+        position: relative;
         p {
           color: #fff;
           font-weight: 800;
@@ -79,8 +102,88 @@ body {
 
         .home-body {
           padding: 100px 0;
+          display: flex;
+          .right {
+            padding: 70px 70px;
+            position: relative;
+            .request {
+              position: absolute;
+              padding-top: 10px;
+
+              bottom: 5%;
+              left: 12%;
+              width: 180px;
+              text-align: center;
+              background-color: #779ecb31;
+              backdrop-filter: blur(10px);
+              border-radius: 15px;
+              p:nth-child(1) {
+                font-size: 20px;
+              }
+
+              .white-bg {
+                border-radius: 15px;
+                background-color: #ffffff20;
+                div {
+                  p {
+                    font-family: "Circe Extra Light", sans-serif;
+                    font-size: 15px;
+                  }
+
+                  text-align: left;
+                  padding-left: 15px;
+                  padding-right: 6px;
+                  div {
+                    display: flex;
+                    padding: 0;
+                    p {
+                      width: 70%;
+                    }
+                  }
+                }
+              }
+            }
+            .learn-more {
+              box-shadow: 2px 2px 50px $blue-dark;
+              position: absolute;
+              padding-top: 10px;
+              top: 3%;
+              right: 20%;
+              width: 180px;
+              text-align: center;
+              background-color: #779ecb31;
+              backdrop-filter: blur(10px);
+              border-radius: 15px;
+              p:nth-child(1) {
+                font-size: 20px;
+              }
+
+              .white-bg {
+                border-radius: 15px;
+                background-color: #bcbcbc20;
+                div {
+                  p {
+                    font-family: "Circe Extra Light", sans-serif;
+                    font-size: 15px;
+                  }
+
+                  text-align: left;
+                  padding-left: 15px;
+                  padding-right: 6px;
+                  div {
+                    display: flex;
+                    padding: 0;
+                    p {
+                      width: 70%;
+                    }
+                  }
+                }
+              }
+            }
+          }
           .left {
             padding: 100px 0;
+            position: relative;
             #take-advantage {
               font-size: 30px;
               font-family: "Circe", sans-serif;
@@ -93,7 +196,7 @@ body {
               font-size: 23px;
               font-weight: 100;
               font-family: "Circe Extra Light", sans-serif;
-              margin-bottom: 10px;
+              margin-bottom: 50px;
             }
             .buttons {
               display: flex;
@@ -110,9 +213,139 @@ body {
               }
               #demo-version {
                 @extend %blue-button;
-                font-size: 24px;
+                font-size: 23px;
+
                 font-family: "Circe Bold", sans-serif;
               }
+            }
+            #arrow-bottom {
+              position: absolute;
+              bottom: 10%;
+              left: -10%;
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+      .about-us {
+        height: 150vh;
+        color: #000;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 200px;
+        .about-body {
+          display: flex;
+          gap: 50px;
+          .right {
+            #title {
+              color: $blue-dark;
+              font-family: "Circe Bold", sans-serif;
+              font-size: 60px;
+            }
+            #about {
+              color: #000000;
+              font-size: 25px;
+            }
+          }
+        }
+        .problem-solving {
+          #title {
+            font-family: "Circe Bold", sans-serif;
+            font-size: 60px;
+            color: $blue-dark;
+            margin-top: 100px;
+            margin-bottom: 50px;
+          }
+          .body {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            .card {
+              height: 155px;
+              display: flex;
+              gap: 10px;
+              .left {
+                div {
+                  height: 155px;
+                  width: 6px;
+                  border-radius: 15px;
+                  background-color: $blue-dark;
+                }
+              }
+              .right {
+                #title-card {
+                  font-family: "Circe Bold", sans-serif;
+                  font-size: 34px;
+                  color: $blue-dark;
+                }
+                #about-card {
+                  font-family: "Circe", sans-serif;
+                  font-size: 20px;
+                  color: #000000;
+                }
+              }
+            }
+          }
+        }
+      }
+      .solution {
+        padding-left: 15%;
+        padding-right: 15%;
+        #title {
+          font-family: "Circe Bold", sans-serif;
+          font-size: 60px;
+          color: $blue-dark;
+        }
+        .body {
+          display: grid;
+          grid-template-columns: 1fr 1fr 2fr;
+          margin-bottom: 100px;
+          gap: 20px;
+          .card {
+            width: 300px;
+            height: 386px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .dots {
+              display: flex;
+              gap: 10px;
+              p {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: #929292;
+                color: #a9a9a9;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+
+                &#active {
+                  background-color: $blue-dark;
+                  color: #fff;
+
+                  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+                }
+              }
+            }
+            &:nth-child(1){
+              background: url(images/image-1.png), no-repeat;
+              background-size: contain;
+            }
+            &:nth-child(2){
+              background: url(images/image-2.png), no-repeat;
+              background-size: contain;
+            }
+            &:nth-child(3){
+              background: url(images/image-3.png), no-repeat;
+              background-size: contain;
+              width: 599px;
+              justify-content: space-between;
+              align-items: end;
             }
           }
         }
