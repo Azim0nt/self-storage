@@ -1,16 +1,122 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    transition: 0.5s;
+$blue-dark: #214080;
+$blue-main: #2954b1;
+@font-face {
+  font-family: "Circe";
+  src: url(fonts/Circe/CRC25.otf) format("opentype"),
+       url(fonts/Circe/CRC26.otf) format("opentype"),
+       url(fonts/Circe/CRC27.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal; 
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+  font-family: "Circe", sans-serif;
+  color: #fff;
 }
 
-$blue-main: #2954b1;
+%white-button {
+  border-radius: 15px;
+  padding: 10px 30px;
+  text-align: center;
+  color: $blue-dark;
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+%blue-button {
+  border-radius: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(263.16deg, #214080 -5.59%, #2954b1 85.18%);
+  filter: drop-shadow(0px 0px 20px rgba(41, 84, 177, 0.5));
+  border: none;
+  outline: none;
+}
 body {
   main {
     header {
-      background-color: $blue-main;
-      
+      width: 100%;
+      height: 70px;
+      div {
+        width: 70%;
+        margin: 0 auto;
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      position: fixed;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      .middle {
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: 400;
+          padding: 10px;
+        }
+      }
+      .right {
+        display: flex;
+        gap: 5px;
+        p {
+          color: #fff;
+          font-weight: 800;
+        }
+      }
+    }
+    position: relative;
+    .main-section {
+      .home {
+        padding-left: 15%;
+        padding-right: 15%;
+        height: 100vh;
+        background: url(images/bg.png), no-repeat;
+        background-size: cover;
+
+        .home-body {
+          padding: 100px 0;
+          .left {
+            padding: 100px 0;
+            #take-advantage {
+              font-size: 30px;
+              font-family: "Circe", sans-serif;
+            }
+            #name {
+              font-size: 80px;
+              font-weight: 600;
+            }
+            #info {
+              font-size: 23px;
+              font-weight: 100;
+              font-family: "Circe Extra Light", sans-serif;
+              margin-bottom: 10px;
+            }
+            .buttons {
+              display: flex;
+              gap: 10px;
+              #consultation {
+                @extend %white-button;
+                display: flex;
+                align-items: center;
+                p {
+                  color: $blue-dark;
+                  font-size: 25px;
+                  font-family: "Circe Bold", sans-serif;
+                }
+              }
+              #demo-version {
+                @extend %blue-button;
+                font-size: 24px;
+                font-family: "Circe Bold", sans-serif;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
