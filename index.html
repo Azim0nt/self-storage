@@ -389,27 +389,38 @@
       </header>
       <div class="bag-modal-window">
         <div class="modal-window">
-          <div class="cancel"><button onclick="exitModalWindow()"><img src="images/cancel.png" alt="" /></button></div>
+          <div class="cancel">
+            <button onclick="exitModalWindow()">
+              <img src="images/cancel.png" alt="" />
+            </button>
+          </div>
           <div class="form">
-             <div class="left">
-            <img src="images/undraw_active_support_re_b7sj 1.png" alt="" />
+            <div class="left">
+              <img src="images/undraw_active_support_re_b7sj 1.png" alt="" />
+            </div>
+            <div class="right">
+              <p id="title">Получить консультацию</p>
+              <input id="inputName" type="text" placeholder="Ваше имя" />
+              <input
+                type="text"
+                name="inputNumber"
+                id="inputNumber"
+                placeholder="Ваш телефон"
+              />
+              <p id="info">
+                Нажимая “Отправить” вы подтверждаете свое согласие на <br />
+                обработку и хранение ваших персональных данных в <br />
+                соответствии с
+                <span>политикой обработки персональных данных. </span>
+              </p>
+              <button id="send-form-modal-window">Отправить запрос</button>
+            </div>
           </div>
-          <div class="right">
-            <p id="title">Получить консультацию</p>
-            <input id="inputName" type="text" placeholder="Ваше имя" />
-            <input id="inputNumber" type="text" placeholder="Ваш телефон" />
-            <p id="info">
-              Нажимая “Отправить” вы подтверждаете свое согласие на  <br>
-              обработку и хранение ваших персональных данных в <br>
-              соответствии с <span>политикой обработки персональных данных.  </span>
-            </p>
-            <button id="send-form-modal-window">Отправить запрос</button>
-          </div>
-          </div>
-         
         </div>
       </div>
-    </main>underline;
+    </main>
+    underline;
     <script src="main.js"></script>
+
   </body>
 </html>
