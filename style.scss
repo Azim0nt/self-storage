@@ -58,6 +58,7 @@ a {
 body {
   position: relative;
   main {
+    background-color: #f1f7ff;
     header {
       width: 100%;
       height: 70px;
@@ -336,15 +337,15 @@ body {
                 }
               }
             }
-            &:nth-child(1){
+            &:nth-child(1) {
               background: url(images/image-1.png), no-repeat;
               background-size: contain;
             }
-            &:nth-child(2){
+            &:nth-child(2) {
               background: url(images/image-2.png), no-repeat;
               background-size: contain;
             }
-            &:nth-child(3){
+            &:nth-child(3) {
               background: url(images/image-3.png), no-repeat;
               background-size: contain;
               width: 599px;
@@ -354,9 +355,122 @@ body {
           }
         }
       }
+      .products {
+        padding-left: 15%;
+        padding-right: 15%;
+        #title {
+          color: $blue-dark;
+          font-size: 60px;
+          font-family: "Circe Bold", sans-serif;
+        }
+        .body {
+          .cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .card {
+              box-shadow: 0px 0px 16.0954px rgba(0, 0, 0, 0.1);
+              border-radius: 17.8838px;
+              width: 575px;
+
+              padding: 30px;
+              background: linear-gradient(
+                  rgba(255, 255, 255, 0.96),
+                  rgba(255, 255, 255, 0.96)
+                ),
+                url("images/bag-1.png") no-repeat;
+              background-size: cover;
+              button {
+                @extend %blue-button;
+                margin: 0;
+                filter: none;
+              }
+              p {
+                color: #000;
+              }
+              #card-title {
+                font-family: "Circe", sans-serif;
+                font-size: 18px;
+              }
+              #card-about {
+                font-family: "Circe", sans-serif;
+                font-size: 18px;
+                margin-bottom: 15px;
+              }
+              #card-name {
+                font-family: "Circe Bold", sans-serif;
+                font-size: 30px;
+                margin-bottom: 15px;
+              }
+              #card-price {
+                margin-bottom: 5%;
+                #full-price {
+                  font-size: 35px;
+                }
+                #price-per-month {
+                  font-size: 20px;
+                }
+                #price-month {
+                  color: #2954b1b6;
+                }
+              }
+            }
+          }
+          .table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            table {
+              background-color: #fff;
+              width: 100%;
+              border-radius: 20px;
+              border: 1px solid #{$blue-dark}50;
+              
+              border: 1px solid rgba(41, 84, 177, 0.5);
+              box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+              border-collapse: separate;
+              border-spacing: 0;
+              padding: 0 30px;
+              
+                
+                tr {
+                  border-bottom: 3px solid #000;
+                  th {
+                    padding: 30px 10px;
+                    color: $blue-dark;
+                    font-size: 20px;
+                    font-weight: 200;
+                    text-align: center;
+                  }
+                  th:first-child{
+                    text-align: left;
+                  }
+                  td:not(:first-child) {
+                    img{
+                      width: 50px;
+                    }
+                    text-align: center;
+                  }
+                  td:first-child{
+                    display: flex;
+                    gap: 5px;
+                  }
+                 
+                  p {
+                    color: #000;
+                  }
+                
+              }
+            }
+          }
+        }
+      }
     }
-    .bag-modal-window{
-      position: fixed ;
+    .bag-modal-window {
+      position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
@@ -366,42 +480,37 @@ body {
       display: none;
       justify-content: center;
       align-items: center;
-      .cancel{
-        button{
-
+      .cancel {
+        button {
           cursor: pointer;
           background-color: transparent;
         }
-        
       }
-      .modal-window{
+      .modal-window {
         width: 960px;
         height: 580px;
         border-radius: 20px;
         padding: 30px;
-        background-color: #F1F7FF;
-        .form{
+        background-color: #f1f7ff;
+        .form {
           display: flex;
-          .left{
+          .left {
             padding: 20px;
-
           }
-          .right{
-            #title{
-              font-family: 'Circe Bold', sans-serif;
+          .right {
+            #title {
+              font-family: "Circe Bold", sans-serif;
               font-size: 40px;
               color: $blue-dark;
-              
             }
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            input{
-          
+            input {
               margin: 15px 0;
               width: 350px;
               height: 75px;
-              border: none ;
+              border: none;
               caret-color: $blue-main;
               outline: none;
               padding-left: 20px;
@@ -409,32 +518,30 @@ body {
               box-shadow: 0px 8px 0px 0px $blue-main;
               color: #000;
               font-size: 20px;
-              
             }
-            input::placeholder{
-              font-family: 'Circe', sans-serif;
+            input::placeholder {
+              font-family: "Circe", sans-serif;
               font-size: 25px;
               color: #dadada;
-              
             }
-            
-            #info{
+
+            #info {
               text-align: right;
-              font-family: 'Circe', sans-serif;
+              font-family: "Circe", sans-serif;
               font-size: 12px;
               margin-bottom: 15px;
               color: #2954b16f;
-              span{
+              span {
                 color: #2954b16f;
                 text-decoration: underline;
               }
             }
-            #send-form-modal-window{
+            #send-form-modal-window {
               padding: 20px 40px;
               background-color: $blue-main;
               border-radius: 15px;
               color: #fff;
-              font-family: 'Circe Bold', sans-serif;
+              font-family: "Circe Bold", sans-serif;
               font-size: 25px;
             }
           }

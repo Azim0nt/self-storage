@@ -48,7 +48,7 @@ body main .main-section .home .home-body .left .buttons #consultation {
   outline: none;
 }
 
-body main .main-section .home .home-body .left .buttons #demo-version {
+body main .main-section .products .body .cards .card button, body main .main-section .home .home-body .left .buttons #demo-version {
   border-radius: 15px;
   padding: 10px 20px;
   background: linear-gradient(263.16deg, #214080 -5.59%, #2954b1 85.18%);
@@ -61,6 +61,7 @@ body {
   position: relative;
 }
 body main {
+  background-color: #f1f7ff;
   position: relative;
 }
 body main header {
@@ -337,6 +338,105 @@ body main .main-section .solution .body .card:nth-child(3) {
   justify-content: space-between;
   align-items: end;
 }
+body main .main-section .products {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+body main .main-section .products #title {
+  color: #214080;
+  font-size: 60px;
+  font-family: "Circe Bold", sans-serif;
+}
+body main .main-section .products .body .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+body main .main-section .products .body .cards .card {
+  box-shadow: 0px 0px 16.0954px rgba(0, 0, 0, 0.1);
+  border-radius: 17.8838px;
+  width: 575px;
+  padding: 30px;
+  background: linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)), url("images/bag-1.png") no-repeat;
+  background-size: cover;
+}
+body main .main-section .products .body .cards .card button {
+  margin: 0;
+  filter: none;
+}
+body main .main-section .products .body .cards .card p {
+  color: #000;
+}
+body main .main-section .products .body .cards .card #card-title {
+  font-family: "Circe", sans-serif;
+  font-size: 18px;
+}
+body main .main-section .products .body .cards .card #card-about {
+  font-family: "Circe", sans-serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+body main .main-section .products .body .cards .card #card-name {
+  font-family: "Circe Bold", sans-serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+body main .main-section .products .body .cards .card #card-price {
+  margin-bottom: 5%;
+}
+body main .main-section .products .body .cards .card #card-price #full-price {
+  font-size: 35px;
+}
+body main .main-section .products .body .cards .card #card-price #price-per-month {
+  font-size: 20px;
+}
+body main .main-section .products .body .cards .card #card-price #price-month {
+  color: rgba(41, 84, 177, 0.7137254902);
+}
+body main .main-section .products .body .table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+body main .main-section .products .body .table table {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #21408050;
+  border: 1px solid rgba(41, 84, 177, 0.5);
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+  border-collapse: separate;
+  border-spacing: 0;
+  padding: 0 30px;
+}
+body main .main-section .products .body .table table tr {
+  border-bottom: 3px solid #000;
+}
+body main .main-section .products .body .table table tr th {
+  padding: 30px 10px;
+  color: #214080;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+}
+body main .main-section .products .body .table table tr th:first-child {
+  text-align: left;
+}
+body main .main-section .products .body .table table tr td:not(:first-child) {
+  text-align: center;
+}
+body main .main-section .products .body .table table tr td:not(:first-child) img {
+  width: 50px;
+}
+body main .main-section .products .body .table table tr td:first-child {
+  display: flex;
+  gap: 5px;
+}
+body main .main-section .products .body .table table tr p {
+  color: #000;
+}
 body main .bag-modal-window {
   position: fixed;
   width: 100%;
@@ -358,7 +458,7 @@ body main .bag-modal-window .modal-window {
   height: 580px;
   border-radius: 20px;
   padding: 30px;
-  background-color: #F1F7FF;
+  background-color: #f1f7ff;
 }
 body main .bag-modal-window .modal-window .form {
   display: flex;
