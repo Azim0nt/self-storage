@@ -1,9 +1,9 @@
-// import IMask from "imask";
 
 const modalBag = document.querySelector('.bag-modal-window');
 const table = document.querySelector('.table')
 const hiddenDiv = document.querySelector('#hidden')
-
+const firstName = document.querySelector('#inputName')
+const phoneNumber = document.querySelector('#inputNumber');
 let tableOpened = false;
 function showTable() {
     if (!tableOpened) {
@@ -48,18 +48,115 @@ document.querySelector('#inputNumber').onkeydown = function (e) {
 
 
 //Функция маски формат +7 (
-function inputphone(e, phone) {
-    function stop(evt) {
-        evt.preventDefault();
-    }
-    let key = e.key, v = phone.value; not = key.replace(/([0-9])/, 1)
-
-    if (not == 1 || 'Backspace' === not) {
-        if ('Backspace' != not) {
-            if (v.length < 3 || v === '') { phone.value = '+7(' }
-            if (v.length === 6) { phone.value = v + ')' }
-            if (v.length === 10) { phone.value = v + '-' }
-            if (v.length === 13) { phone.value = v + '-' }
+    function inputphone(e, phone) {
+        function stop(evt) {
+            evt.preventDefault();
         }
-    } else { stop(e) }
+    
+        let key = e.key, v = phone.value;
+        let not = key.replace(/([0-9])/, '1');
+    
+        if (not === '1' || key === 'Backspace') {
+            if (key !== 'Backspace') {
+                if (v.length === 0) { phone.value = '+7('; }
+                if (v.length === 6) { phone.value = v + ')'; }
+                if (v.length === 10) { phone.value = v + '-'; }
+                if (v.length === 13) { phone.value = v + '-'; }
+                // Ограничиваем длину номера до 16 символов
+                if (v.length > 16) { stop(e); }
+            }
+        } else { stop(e); }
+    }
+    
+    
+function checkRight(e) {
+    e.preventDefault();
+    if (firstName.value.length > 0) {
+
+    }
+    else {
+        document.querySelector('#send-btn').disabled = true;
+        firstName.style.boxShadow = 'inset 2px 2px 15px red'
+    }
 }
+
+function sendForm(e) {
+    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+    // Получаем значения из инпутов
+    const firstNameValue = document.querySelector('#inputName').value;
+    const phoneNumberValue = document.querySelector('#inputNumber').value;
+
+    // Создаем объект с данными для отправки
+    if(firstNameValue.length > 0 && phoneNumberValue.length > 0){
+
+        const data = {
+            firstname: firstNameValue,
+            username : phoneNumberValue.replace(/[() +]/g, ''),
+            from: 'store_engineering'
+            // Добавьте другие данные, если необходимо
+        };
+
+        // Отправляем данные на сервер
+        fetch('https://ssttoorree.ru/_receive_question_', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            Toastify({
+                text: "Форма успешно отправлена!",
+                duration: 3000,
+                close: false,
+                gravity: "top",
+                position: "center",
+                style: {
+                    background: "#2ec720",
+                    color: "#fff",
+                    borderRadius: "5px",
+                    padding: "5px",
+                    fontFamily: "'Circe Bold', sans-serif"
+                },
+            }).showToast();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            Toastify({
+                text: "Произошла ошибка при отправке формы!",
+                duration: 3000,
+                close: false,
+                gravity: "top",
+                position: "center",
+                style: {
+                    background: "#c5100f",
+                    color: "#fff",
+                    borderRadius: "5px",
+                    padding: "5px",
+                    fontFamily: "'Circe Bold', sans-serif"
+                },
+            }).showToast();
+        });
+    }
+    else{
+        Toastify({
+            text: "Вы не до конца заполнили форму!",
+            duration: 3000,
+            close: false,
+            gravity: "top",
+            position: "center",
+            style: {
+                background: "#c5100f",
+                color: "#fff",
+                borderRadius: "5px",
+                padding: "5px",
+                fontFamily: "'Circe Bold', sans-serif"
+            },
+        }).showToast();  
+    }
+}
+
+

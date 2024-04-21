@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="node_modules/toastify-js/src/toastify.css">
     <title>Document</title>
   </head>
   <body>
@@ -703,7 +703,7 @@
             </div>
             <div class="right">
               <p id="title">Получить консультацию</p>
-              <input id="inputName" type="text" placeholder="Ваше имя" />
+              <input onchange="checkRight(e)" id="inputName" type="text" placeholder="Ваше имя" />
               <input
                 type="text"
                 name="inputNumber"
@@ -716,7 +716,7 @@
                 соответствии с
                 <span>политикой обработки персональных данных. </span>
               </p>
-              <button id="send-form-modal-window">Отправить запрос</button>
+              <button onclick="sendForm(event)" id="send-form-modal-window">Отправить запрос</button>
             </div>
           </div>
         </div>
@@ -724,5 +724,6 @@
     </main>
     underline;
     <script src="main.js"></script>
+    <script src="node_modules/toastify-js/src/toastify.js"></script>
   </body>
 </html>
