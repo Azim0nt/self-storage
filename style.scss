@@ -62,6 +62,7 @@ body {
   position: relative;
   main {
     background-color: #f1f7ff;
+    position: relative;
     header {
       width: 100%;
       height: 70px;
@@ -71,36 +72,94 @@ body {
         margin: 0 auto;
         height: inherit;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        .left {
+          width: 20%;
+        }
+        .menu {
+          width: 80%;
+
+          display: flex;
+
+          justify-content: start;
+
+          a {
+            text-decoration: none;
+          }
+          &.disable {
+            .nav {
+              display: flex;
+            }
+          }
+          &.enable {
+            .nav {
+              display: none;
+            }
+          }
+          .burger-menu-btn {
+            background-color: transparent;
+            display: none;
+            .burger {
+              display: flex;
+              justify-content: right;
+              height: auto;
+              .burger-body {
+                margin: 20px 0;
+
+                display: flex;
+
+                flex-direction: column;
+                height: auto;
+                gap: 5px;
+                width: 35px;
+
+                div {
+                  width: 35px;
+                  height: 3px;
+                  background-color: #fff;
+                  border-radius: 20px;
+                }
+              }
+            }
+          }
+          .nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .middle {
+              a {
+                text-decoration: none;
+                text-wrap: nowrap;
+                font-size: clamp(15px, 1.82vw, 20px);
+                color: #fff;
+                font-family: "Circe Extra Light", sans-serif;
+                padding: 0 10px;
+              }
+            }
+            .right {
+              display: flex;
+              justify-content: center;
+              gap: 5px;
+              position: relative;
+              p {
+                color: #fff;
+                font-weight: 800;
+                font-size: clamp(15px, 1.82vw, 20px);
+                text-wrap: nowrap;
+                a {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
       }
       position: fixed;
       z-index: 4;
       top: 0;
       left: 0;
-      .middle {
-        a {
-          text-decoration: none;
-          text-wrap: nowrap;
-          font-size: clamp(15px, 1.82vw, 20px);
-          color: #fff;
-          font-family: "Circe Extra Light", sans-serif;
-          padding: 0 10px;
-        }
-      }
-      .right {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        position: relative;
-        p {
-          color: #fff;
-          font-weight: 800;
-          a {
-            text-decoration: none;
-          }
-        }
-      }
     }
     position: relative;
     .main-section {
@@ -110,7 +169,7 @@ body {
         background-size: cover;
         height: clamp(500px, 77.92vw, 996px);
         padding-top: 50px;
-
+        display: block;
         .home-body {
           width: 70%;
           display: flex;
@@ -119,8 +178,10 @@ body {
           margin: 0 auto;
           .right {
             display: flex;
-            justify-content: center;
+            width: 60%;
+            justify-content: left;
             align-items: center;
+            padding-right: 40px;
             img {
               width: clamp(411px, 59.48vw, 731px);
               height: clamp(341px, 54.48vw, 705px);
@@ -128,6 +189,7 @@ body {
           }
           .left {
             padding-top: 7%;
+            width: 40%;
             position: relative;
             #take-advantage {
               font-size: clamp(14px, 2.29vw, 30px);
@@ -192,6 +254,7 @@ body {
           justify-content: space-between;
           gap: 50px;
           width: 100%;
+          padding-bottom: 50px;
           .left {
             width: 60%;
             img {
@@ -254,9 +317,11 @@ body {
       .solution {
         // padding-left: 15%;
         // padding-right: 15%;
-        padding-top: 50px;
+        // margin-top: 50px;
+        // padding-top: 10%;
+
         width: 70%;
-        margin: 0 auto;
+        margin: 50px auto 0;
         #title {
           font-family: "Circe Bold", sans-serif;
           font-size: 60px;
@@ -327,16 +392,18 @@ body {
           font-family: "Circe Bold", sans-serif;
         }
         .body {
+          
           .cards {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 10px;
 
             .card {
               box-shadow: 0px 0px 16.0954px rgba(0, 0, 0, 0.1);
               border-radius: 17.8838px;
-              width: 575px;
+              
+              width: 50%;
 
               padding: 30px;
               background: linear-gradient(
@@ -355,28 +422,30 @@ body {
               }
               #card-title {
                 font-family: "Circe", sans-serif;
-                font-size: 18px;
+                font-size: clamp;
+                font-size: clamp(10px, 1.46vw, 18px);
               }
               #card-about {
                 font-family: "Circe", sans-serif;
-                font-size: 18px;
                 margin-bottom: 15px;
+                font-size: clamp(10px, 1.46vw, 18px);
               }
               #card-name {
                 font-family: "Circe Bold", sans-serif;
-                font-size: 30px;
+                font-size: clamp(17px, 2.45vw, 30px);
                 margin-bottom: 15px;
               }
               #card-price {
                 margin-bottom: 5%;
                 #full-price {
-                  font-size: 35px;
+                  font-size: clamp(20px, 2.86vw, 35px);
                 }
                 #price-per-month {
-                  font-size: 20px;
+                  font-size: clamp(13px, 1.72vw, 20px);
                 }
                 #price-month {
                   color: #2954b1b6;
+                  font-size: clamp(9px, 1.20vw, 14px);
                 }
               }
             }
@@ -492,9 +561,10 @@ body {
             .products-card {
               display: flex;
               justify-content: space-between;
+              gap: 20px;
               .card {
-                width: 49%;
-                height: 390px;
+                width: clamp(100%, 48.44vw, 590px);
+                height: clamp(100%, 32.14vw, 390px);
                 display: flex;
                 justify-content: space-between;
                 background-color: transparent;
@@ -816,14 +886,12 @@ body {
           display: flex;
           position: relative;
           justify-content: space-between;
-          
+
           gap: 20px;
           height: clamp(317px, 47.14vw, 588px);
           padding: 10px;
-          background: linear-gradient(
-            #f3faffef, #f3faffef
-            ),
-            url("images/bag-1.png") ;
+          background: linear-gradient(#f3faffef, #f3faffef),
+            url("images/bag-1.png");
           box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
           border-radius: 20px;
 
@@ -832,10 +900,10 @@ body {
             width: 60%;
             img {
               margin-top: -90px;
-              min-width: clamp(317px, 48.33vw, 611px);
+              max-width: clamp(317px, 48.33vw, 611px);
             }
           }
-          .right{
+          .right {
             max-width: 40%;
             width: 45%;
             #title {
@@ -844,7 +912,7 @@ body {
               color: $blue-dark;
               margin-bottom: 15px;
             }
-            
+
             display: flex;
             flex-direction: column;
             justify-content: space-center;
@@ -870,7 +938,6 @@ body {
             }
 
             #info {
-              
               font-family: "Circe", sans-serif;
               font-size: clamp(8px, 1.04vw, 12px);
               margin-bottom: 15px;
@@ -1014,6 +1081,11 @@ body {
 
   body {
     main {
+      header {
+        div {
+          width: 80%;
+        }
+      }
       .main-section {
         .home {
           height: 85vh;
@@ -1038,6 +1110,11 @@ body {
 @media (max-width: 1000px) {
   body {
     main {
+      header {
+        div {
+          width: 90%;
+        }
+      }
       .main-section {
         .home {
           height: 65vh;
@@ -1058,6 +1135,7 @@ body {
         }
         .solution {
           width: 95%;
+          margin: 100px auto 0;
         }
         .products {
           width: 95%;
@@ -1076,6 +1154,12 @@ body {
             }
           }
         }
+        .how-to-working{
+          width: 95%;
+        }
+        .contact{
+          width: 95%;
+        }
       }
     }
   }
@@ -1083,6 +1167,22 @@ body {
 @media (max-width: 768px) {
   body {
     main {
+      overflow: hidden ;
+      header{
+        width: 100%;
+        
+        div{
+          .left{
+            width: 10%;
+          }
+          .menu{
+            width: 90%;
+            .nav{
+              
+            }
+          }
+        }
+      }
       .main-section {
         .home {
           height: 65vh;
@@ -1101,10 +1201,27 @@ body {
         }
         .solution {
           width: 95%;
+          margin: 150px auto 0;
         }
         .products {
-          width: 95%;
+         
+          
           .body {
+            .cards{
+              position: relative;
+              justify-content: left;
+              .card{
+                &:nth-child(1){
+                  width: 50%;
+                }
+                &:nth-child(2){
+                  width: 50%;
+                  position: relative;
+                  right: -50px;
+                  z-index: 3;
+                }
+              }
+            }
             .production {
               width: 100%;
               #about {
@@ -1114,6 +1231,72 @@ body {
                 .card {
                   width: 49%;
                   height: auto;
+                }
+              }
+            }
+          }
+        }
+        .how-to-working{
+         
+        }
+        .contact{
+          
+        }
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  body {
+    main {
+     
+      .main-section {
+        .home {
+          .home-body {
+            .right {
+            }
+          }
+        }
+        .about-us {
+          .problem-solving {
+            .body {
+            }
+          }
+        }
+        .solution {
+          .body{
+            grid-template-columns: repeat(2, 1fr) ;
+            display: grid;
+            .card{
+              &:nth-child(3){
+                grid-column: span 2;
+              }
+            }
+          }
+        }
+        .products {
+          .body {
+            .cards{
+              flex-direction: column;
+              padding: 0;
+              
+              .card{
+                padding: 5px;
+                width: 100%;
+                &:nth-child(1){
+                  width: 100%;
+                }
+                &:nth-child(2){
+                  position: static;
+                  width: 100%;
+                }
+              }
+            }
+            .production {
+              #about {
+              }
+              .products-card {
+                .card {
                 }
               }
             }
