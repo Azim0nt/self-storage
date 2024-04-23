@@ -234,3 +234,19 @@ function sendForm(nameID, phoneID) {
 // JavaScript for Menu Toggle
 
   
+function burgerMenu(){
+    const menu = document.querySelector('.menu')
+    const btn = document.querySelector('.burger-menu-btn')
+    if(btn.classList.value.includes('enable')){
+        btn.classList.remove('enable')
+    }
+    else{
+        btn.classList.add('enable')
+    }
+    if (menu.classList.value.includes('enable')){
+        menu.classList.remove('enable')
+    }
+    else{
+        menu.classList.add('enable')
+    }
+}

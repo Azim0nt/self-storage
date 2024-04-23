@@ -12,6 +12,6 @@ def calculate_average_vw(min_px, max_px, viewport_width):
 viewport_width_px = 1920
 
 # Вычисляем среднее значение в vw
-average_font_size_vw = calculate_average_vw(9,14, viewport_width_px)
+average_font_size_vw = calculate_average_vw(111,180, viewport_width_px)
 
 print(average_font_size_vw)
