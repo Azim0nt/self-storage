@@ -434,7 +434,7 @@ body main .main-section .products .body .table table tr {
 body main .main-section .products .body .table table tr th {
   padding: 30px 10px;
   color: #214080;
-  font-size: 20px;
+  font-size: clamp(7px, 1.67vw, 25px);
   font-weight: 200;
   text-align: center;
 }
@@ -458,6 +458,7 @@ body main .main-section .products .body .table table tr th {
 body main .main-section .products .body .table table tr td {
   border-top: 1px solid #21408030;
   position: relative;
+  font-size: clamp(7px, 1.67vw, 25px);
 }
 body main .main-section .products .body .table table tr td div .alert {
   position: absolute;
@@ -478,9 +479,12 @@ body main .main-section .products .body .table table tr td div:hover .alert {
 body main .main-section .products .body .table table tr p {
   color: #000;
 }
+body main .main-section .products .body .production #title {
+  font-size: clamp(7px, 2.45vw, 40px);
+}
 body main .main-section .products .body .production #about {
   color: #000;
-  font-size: 30px;
+  font-size: clamp(7px, 1.93vw, 30px);
   margin: 10px 0;
 }
 body main .main-section .products .body .production .name #subtitle {
@@ -1050,9 +1054,13 @@ body main .bag-modal-window.show {
     height: 65vh;
     background-size: 120%;
     padding-top: 20px;
+    overflow: hidden;
   }
   body main .main-section .home .home-body {
     width: 95%;
+  }
+  body main .main-section .home .home-body .right #man-phone {
+    padding-top: 100px;
   }
   body main .main-section .about-us {
     width: 95%;
@@ -1101,6 +1109,22 @@ body main .bag-modal-window.show {
   body main {
     overflow: hidden;
   }
+  body main .bag-modal-window .modal-window {
+    width: 95%;
+  }
+  body main .bag-modal-window .modal-window .form {
+    padding: 5px;
+  }
+  body main .bag-modal-window .modal-window .form .left img {
+    max-width: 20%;
+  }
+  body main .bag-modal-window .modal-window .form .right {
+    align-items: start;
+  }
+  body main .bag-modal-window .modal-window .form .right input {
+    max-width: 250px;
+    padding: 0;
+  }
   body main header {
     width: 100%;
   }
@@ -1137,21 +1161,23 @@ body main .bag-modal-window.show {
     width: 95%;
   }
   body main .main-section .home .home-body .right {
+    padding: 0;
     justify-content: end;
   }
   body main .main-section .home .home-body .right .item:nth-child(1) {
     width: 50%;
-    left: -50%;
-    bottom: 10%;
+    left: -75px;
+    bottom: 0;
   }
   body main .main-section .home .home-body .right .item:nth-child(2) {
     width: 50%;
-    right: 20%;
-    bottom: 10%;
+    right: 40px;
+    top: 40px;
   }
   body main .main-section .home .home-body .right #man-phone {
-    width: 140%;
-    height: atuo;
+    width: 160%;
+    height: auto;
+    padding-left: 100px;
   }
   body main .main-section .about-us .problem-solving .body {
     grid-template-columns: repeat(2, 1fr);
@@ -1164,12 +1190,12 @@ body main .bag-modal-window.show {
     justify-content: left;
   }
   body main .main-section .products .body .cards .card:nth-child(1) {
-    width: 50%;
+    width: 80%;
   }
   body main .main-section .products .body .cards .card:nth-child(2) {
     width: 50%;
     position: relative;
-    right: -50px;
+    right: -100px;
     z-index: 3;
   }
   body main .main-section .products .body .production {
@@ -1201,6 +1227,23 @@ body main .bag-modal-window.show {
   }
 }
 @media (max-width: 360px) {
+  body main .bag-modal-window .modal-window {
+    overflow: hidden;
+  }
+  body main .bag-modal-window .modal-window .form .left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  body main .bag-modal-window .modal-window .form .left img {
+    opacity: 20%;
+  }
+  body main .bag-modal-window .modal-window .form .right {
+    width: 100%;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
   body main header {
     padding: 0 10px;
   }
@@ -1240,6 +1283,10 @@ body main .bag-modal-window.show {
     justify-content: space-between;
     row-gap: 30px;
   }
+  body main .main-section .home .home-body .left {
+    position: relative;
+    z-index: 1;
+  }
   body main .main-section .home .home-body .left .buttons {
     flex-direction: column;
   }
@@ -1255,9 +1302,10 @@ body main .bag-modal-window.show {
   }
   body main .main-section .home .home-body .right #man-phone {
     position: absolute;
-    width: 350%;
+    width: 300%;
     right: -150%;
     transform: scaleX(-1);
+    z-index: 0;
   }
   body main .main-section .solution .body {
     grid-template-columns: repeat(2, 1fr);
@@ -1280,6 +1328,23 @@ body main .bag-modal-window.show {
   body main .main-section .products .body .cards .card:nth-child(2) {
     position: static;
     width: 100%;
+  }
+  body main .main-section .products .body .production .products-card {
+    flex-direction: column;
+  }
+  body main .main-section .products .body .production .products-card .card {
+    width: 100%;
+  }
+  body main .main-section .products .body .production .additional-prodcts .cards-2 {
+    flex-direction: column;
+    display: flex;
+  }
+  body main .main-section .products .body .table {
+    margin: 10px auto;
+  }
+  body main .main-section .products .body .table table {
+    width: 90%;
+    padding: 0;
   }
   body main .main-section .contact .form-2 {
     display: flex;
